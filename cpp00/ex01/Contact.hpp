@@ -13,8 +13,22 @@ class Contact
 		std::string	phoneNumber;
 		std::string darkestSecret;
 	public:
-	void	add_contact()
-	{
+	void	add_contact();
+	void	display();
+
+	//Getters
+	std::string	getFirstName();
+	std::string	getLastname();
+	std::string	getNickname();
+	std::string	getPhoneNumber();
+	std::string	getDarkestSecret();
+	//constructor
+	Contact(){
+		firstName = lastName = nickname = phoneNumber = darkestSecret = nullptr;
+	}
+};
+
+void	Contact::add_contact(){
 		std::cout << "first name: " << std::endl;
 		getline(std::cin, firstName);
 		std::cout << "last name: " << std::endl;
@@ -25,19 +39,15 @@ class Contact
 		getline(std::cin, phoneNumber);
 		std::cout << "secret: " << std::endl;
 		getline(std::cin, darkestSecret);
-	}
-	//constructor
-	Contact(){
-		firstName = lastName = nickname = phoneNumber = darkestSecret = "N/A";
-	}
-	void	display(){
+}
+
+void	Contact::display(){
 		std::cout << &firstName << std::endl;
 		std::cout << firstName << std::endl;
 		std::cout << lastName << std::endl;
 		std::cout << nickname << std::endl;
 		std::cout << phoneNumber << std::endl;
 		std::cout << darkestSecret << std::endl;
-	}
-};
+}
 
 #endif

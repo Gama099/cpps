@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 			log.addContact();
 		}
 		else if (!cmd.compare("SEARCH")){
-			log.displayConatact();
+			log.displayContact();
 		}
 		else if (!cmd.compare("EXIT"))
 			exit(EXIT_SUCCESS);

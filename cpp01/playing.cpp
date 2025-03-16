@@ -25,19 +25,22 @@ class Harl {
 
 int main()
 {
-	Harl obj;
-	void (Harl::*ptr1)();
-	void (Harl::*ptr2)();
+	std::string line;
+	line.append(".xn");
+	std::cout << line;
+	// Harl obj;
+	// void (Harl::*ptr1)();
+	// void (Harl::*ptr2)();
 
-	ptr1 = &Harl::debug;
-	ptr2 = &Harl::info;
+	// ptr1 = &Harl::debug;
+	// ptr2 = &Harl::info;
 
-	(obj.*ptr1)();
-	(obj.*ptr2)();
+	// (obj.*ptr1)();
+	// (obj.*ptr2)();
 
-	void (Harl::*ptrs[4])();
-	(obj.*ptrs[0])() = &Harl::debug;
-	(obj.*ptrs[1])() = &Harl::info;
+	// void (Harl::*ptrs[4])();
+	// (obj.*ptrs[0])() = &Harl::debug;
+	// (obj.*ptrs[1])() = &Harl::info;
 
 	// void (Myclass::*ptr)();
 	// ptr = &Myclass::display;
