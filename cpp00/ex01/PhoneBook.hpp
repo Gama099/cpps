@@ -35,7 +35,7 @@ private:
 	int		index;
 public:
 	PhoneBook();
-	~PhoneBook();
+	// ~PhoneBook();
 	void	addContact(void);
 	void	displayContact(void);
 };
@@ -50,7 +50,7 @@ void	PhoneBook::addContact(){
 void	PhoneBook::displayContact(){
 	std::string cmd;
 	int idx;
-	for (int  i = 0;(i < index && i < 8); i++){
+	for (int  i = 0;(i <= index && i < 8); i++){
 		std::cout << "|" << index
 		<< "|" << contacts[index].getFirstName()
 		<< "|" << contacts[index].getLastname()
@@ -59,7 +59,7 @@ void	PhoneBook::displayContact(){
 	}
 	std::cout << "entre index to display" << std::endl;
 	std::getline(std::cin, cmd);
-	for(int i = 0; i < cmd.length(); i++){
+	for(int i = 0; i < (int)cmd.length(); i++){
 		if (!std::isdigit(cmd[i])){
 			std::cout << "please entre valid index!!" <<std::endl;
 			break;
@@ -69,8 +69,11 @@ void	PhoneBook::displayContact(){
 	if (idx > 7 || idx < 0)
 		std::cout << "please entre valid index!!" <<std::endl;
 	//find somthing to check if is number
-
-
+	std::cout << contacts[idx].getFirstName() << std::endl;
+	std::cout << contacts[idx].getLastname() << std::endl;
+	std::cout << contacts[idx].getNickname() << std::endl;
+	std::cout << contacts[idx].getPhoneNumber() << std::endl;
+	std::cout << contacts[idx].getDarkestSecret() << std::endl;
 }
 
 

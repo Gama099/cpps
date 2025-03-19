@@ -2,11 +2,11 @@
 
 void	set_phone_book( std::string cmd );
 
-int	main(int ac, char **av)
+int	main()
 {
 	while (1){
-		std::string cmd;
-		PhoneBook log;
+		std::string	cmd;
+		PhoneBook	log;
 
 		std::cout << "welome to the phone book";
 		//TODO draw a phonebook
@@ -22,4 +22,10 @@ int	main(int ac, char **av)
 		else if (!cmd.compare("EXIT"))
 			exit(EXIT_SUCCESS);
 	}
+}
+
+int	main()
+{
+	PhoneBook phones;
+	
 }

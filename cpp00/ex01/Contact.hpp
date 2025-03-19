@@ -12,20 +12,25 @@ class Contact
 		std::string nickname;
 		std::string	phoneNumber;
 		std::string darkestSecret;
-	public:
-	void	add_contact();
-	void	display();
 
-	//Getters
-	std::string	getFirstName();
-	std::string	getLastname();
-	std::string	getNickname();
-	std::string	getPhoneNumber();
-	std::string	getDarkestSecret();
-	//constructor
-	Contact(){
-		firstName = lastName = nickname = phoneNumber = darkestSecret = nullptr;
-	}
+	public:
+		Contact(){
+			firstName = "N/A";
+			lastName = "N/A";
+			nickname = "N/A";
+			phoneNumber = "N/A";
+			darkestSecret = "N/A";
+		}
+		void	add_contact();
+		void	display();
+
+		//Getters
+		std::string	getFirstName();
+		std::string	getLastname();
+		std::string	getNickname();
+		std::string	getPhoneNumber();
+		std::string	getDarkestSecret();
+
 };
 
 void	Contact::add_contact(){
@@ -49,5 +54,26 @@ void	Contact::display(){
 		std::cout << phoneNumber << std::endl;
 		std::cout << darkestSecret << std::endl;
 }
+
+std::string Contact::getFirstName() {
+    return firstName;
+}
+
+std::string Contact::getLastname() {
+    return lastName;
+}
+
+std::string Contact::getNickname() {
+    return nickname;
+}
+
+std::string Contact::getPhoneNumber() {
+    return phoneNumber;
+}
+
+std::string Contact::getDarkestSecret() {
+    return darkestSecret;
+}
+
 
 #endif
