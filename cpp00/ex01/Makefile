@@ -1,17 +1,17 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp
-OBJ = $(SRC:.cpp=.o)
+SRC = main.cpp Contact.cpp PhoneBook.cpp
+OBJ = main.o
 
 TARGET = program
 
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(TARGET)
+	$(CC) $(FLAGS) $(OBJ) -o
 
 $(OBJ): $(SRC)
-	$(CC) $(FLAGS) -c $(SRC) -o $(OBJ)
+	$(CC) $(FLAGS) $(SRC) -o 
 
 clean:
 	rm -rf $(OBJ)
