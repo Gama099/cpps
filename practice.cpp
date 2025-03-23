@@ -45,10 +45,23 @@ class ps{
 
 };
 
+class engine{
+	public:
+		engine(){
+			cout<<"3annn"<<endl;
+		}
+};
+
+class car : public engine {
+	public:
+		car(){
+			cout <<"dimarii"<<endl;
+		}
+};
+
 int main()
 {
-	ps n1(15, 5);
-	ps n2(10, 5);
-	ps r = n2 + n1;
-	cout << r.x << "|" << r.y ;
+	car *g63 = new car;
+	delete g63;
+	car bmw;
 }
