@@ -1,12 +1,13 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(){
     ClapTrap robot("dex");
-    ClapTrap monster("chradir");
+    ScavTrap dark("moster");
 
-    for (size_t i = 0; i < 15; i++)
+    for (size_t i = 0; i < 1; i++)
     {
-        robot.takeDamage(1);
+        dark.takeDamage(1);
+        dark.guardGate();
     }
     
 }

@@ -5,8 +5,6 @@ ClapTrap::ClapTrap(std::string name) : name(name), HitPoints(10), EnergyPoints(1
     std::cout << "constructor has been called!!" << std::endl;
 }
 
-
-
 ClapTrap::~ClapTrap() {
     std::cout << "destructor has been called!!" << std::endl;
 }
