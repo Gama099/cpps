@@ -1,0 +1,158 @@
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
+
+#include <iostream>
+#include <string>
+
+class ClapTrap {
+protected:
+    std::string name;
+    int HitPoints;
+    int EnergyPoints;
+    int AttackDamage;
+
+public:
+    ClapTrap(std::string name);
+    ClapTrap(std::string name, int HP, int EP, int AD);
+    ~ClapTrap();
+    void attack(const std::string& target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
+};
+
+#endif#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
+
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+
+class DiamondTrap : public ScavTrap, public FragTrap {
+private:
+    std::string name;
+
+public:
+    DiamondTrap(std::string name);
+    ~DiamondTrap();
+
+    void whoAmI();
+};
+
+#endif#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
+#include "ScavTrap.hpp"
+
+class FragTrap : virtual public ClapTrap {
+private:
+    /* data */
+public:
+    FragTrap(std::string name);
+    ~FragTrap();
+    void highFivesGuys(void);
+};
+
+
+#endif#ifndef SCAVTRAP_HPP // Fix header guard
+#define SCAVTRAP_HPP
+
+#include "ClapTrap.hpp"
+
+class ScavTrap : virtual public ClapTrap {
+public:
+    ScavTrap(std::string name);
+    ~ScavTrap();
+    void guardGate();
+};
+
+#endif#include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(std::string name) : name(name), HitPoints(10), EnergyPoints(10), AttackDamage(0) {
+    std::cout << "ClapTrap constructor has been called!!" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name, int HP, int EP, int AD) : name(name), HitPoints(HP), EnergyPoints(EP), AttackDamage(AD) {
+    std::cout << "ClapTrap parameterized constructor has been called!!" << std::endl;
+}
+
+ClapTrap::~ClapTrap() {
+    std::cout << "ClapTrap destructor has been called!!" << std::endl;
+}
+
+void ClapTrap::attack(const std::string& target) {
+    if (EnergyPoints > 0 && HitPoints > 0) {
+        EnergyPoints--;
+        std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << AttackDamage << " points of damage!" << std::endl;
+    } else {
+        std::cout << "ClapTrap " << name << " cannot attack because it has no energy or health!" << std::endl;
+    }
+}
+
+void ClapTrap::takeDamage(unsigned int amount) {
+    if (EnergyPoints > 0 && HitPoints > 0) {
+        HitPoints -= amount;
+        std::cout << "ClapTrap " << name << " takes " << amount << " points of damage!" << std::endl;
+    } else {
+        std::cout << "ClapTrap " << name << " has no health left to take damage!" << std::endl;
+    }
+}
+
+void ClapTrap::beRepaired(unsigned int amount) {
+    if (EnergyPoints > 0 && HitPoints > 0) {
+        EnergyPoints--;
+        HitPoints += amount;
+        std::cout << "ClapTrap " << name << " repairs " << amount << " points!" << std::endl;
+    } else {
+        std::cout << "ClapTrap " << name << " cannot repair because it has no energy or health!" << std::endl;
+    }
+}#include "DiamondTrap.hpp"
+
+DiamondTrap::DiamondTrap(std::string name): FragTrap(name), ScavTrap(name){
+    HitPoints = FragTrap::HitPoints;
+    EnergyPoints = ScavTrap::EnergyPoints;
+    AttackDamage = FragTrap::AttackDamage;
+    std::cout << "DiamondTrap " << name << " is born!" << std::endl;
+}
+
+DiamondTrap::~DiamondTrap() {
+    std::cout << "DiamondTrap " << name << " is destroyed!" << std::endl;
+}
+
+void DiamondTrap::whoAmI(){
+    std::cout << "DiamondTrap name: " << name << std::endl;
+    std::cout << "ClapTrap name: " << ClapTrap::name << std::endl;
+}#include "FragTrap.hpp"
+
+FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30) {
+    std::cout << "FragTrap " << name << " is born!" << std::endl;
+}
+
+FragTrap::~FragTrap() {
+    std::cout << "FragTrap " << name << " is destroyed!" << std::endl;
+}
+
+void FragTrap::highFivesGuys(void){
+    std::cout << "FragTrap " << name << " requests a high five!" << std::endl;
+}#include "FragTrap.hpp"
+
+int main() {
+    FragTrap frag("Boomer");
+
+    frag.attack("Enemy");
+    frag.takeDamage(20);
+    frag.beRepaired(10);
+    frag.highFivesGuys();
+
+    return 0;
+}#include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20) {
+    std::cout << "ScavTrap " << name << " is born!" << std::endl;
+}
+
+ScavTrap::~ScavTrap() {
+    std::cout << "ScavTrap " << name << " is destroyed!" << std::endl;
+}
+
+void ScavTrap::guardGate() {
+    std::cout << "ScavTrap " << name << " is now in Gate keeper mode." << std::endl;
+}

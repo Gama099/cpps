@@ -1,14 +1,13 @@
-#ifndef SCAV_HPP
-#define SCAV_HPP
+#ifndef SCAVTRAP_HPP // Fix header guard
+#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
-{
+class ScavTrap : public ClapTrap {
 public:
     ScavTrap(std::string name);
-    ScavTrap(std::string name, int HP, int EP, int AD);
-    void guardGate(void);
+    ~ScavTrap();
+    void guardGate();
 };
 
 #endif

@@ -2,13 +2,13 @@
 #define CLAPTRAP_HPP
 
 #include <iostream>
+#include <string>
 
-class ClapTrap
-{
+class ClapTrap {
 protected:
     std::string name;
-    int HitPoints; //  represent the health of the ClapTrap
-    int EnergyPoints; 
+    int HitPoints;
+    int EnergyPoints;
     int AttackDamage;
 
 public:
@@ -19,6 +19,5 @@ public:
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 };
-
 
 #endif
