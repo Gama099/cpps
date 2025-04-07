@@ -1,12 +1,13 @@
 #include "PhoneBook.hpp"
 
-void	set_phone_book( std::string cmd );
+// void	set_phone_book( std::string cmd );
 
 int	main()
 {
 	std::string	cmd;
 	PhoneBook	log;
 	int 		index = 0;
+	// displayWelcomeMessage();
 	while (1){
 
 		std::cout << "welome to the phone book";
@@ -16,13 +17,14 @@ int	main()
 		if (!cmd.compare("ADD")){
 			log.addContact(index);
 			index++;
-			log.disply();
+			// log.disply();
 		}
 		else if (!cmd.compare("SEARCH")){
 			log.displayContact(index);
 		}
 		else if (!cmd.compare("EXIT"))
 			exit(EXIT_SUCCESS);
+		else
+			continue;
 	}
 }
-

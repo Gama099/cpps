@@ -10,7 +10,7 @@ void	PhoneBook::displayContact(int index){
 	std::string cmd;
 	int idx;
 
-	for (int  i = 0;(i <= index && i < 8); i++){
+	for (int  i = 0; (i <= index && i < 8); i++){
 		std::cout << "|" << i
 		<< "|" << contacts[i].getFirstName()
 		<< "|" << contacts[i].getLastname()
