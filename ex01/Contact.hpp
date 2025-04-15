@@ -1,8 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-hadd <sel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 18:18:12 by sel-hadd          #+#    #+#             */
+/*   Updated: 2025/04/15 18:18:12 by sel-hadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
 #include <string>
 #include <iostream>
+#include <cstdlib>
 
 class Contact
 {

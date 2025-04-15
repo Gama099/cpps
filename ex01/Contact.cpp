@@ -1,20 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-hadd <sel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 18:18:04 by sel-hadd          #+#    #+#             */
+/*   Updated: 2025/04/15 18:18:06 by sel-hadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 void	Contact::add_contact(){
 	std::cout << "📝 first name: " << std::endl;
-	std::getline(std::cin, firstName);
+	if(!std::getline(std::cin, firstName))
+		exit(1) ;
 	std::cout << "🖊️ last name: " << std::endl;
-	std::getline(std::cin, lastName);
+	if(!std::getline(std::cin, lastName))
+		exit(1);
 	std::cout << "🏷️ nickname: " << std::endl;
-	std::getline(std::cin, nickname);
+	if (!std::getline(std::cin, nickname))
+		exit(1);
 	std::cout << "📞 phone: " << std::endl;
-	std::getline(std::cin, phoneNumber);
+	if (!std::getline(std::cin, phoneNumber))
+		exit(1);
 	std::cout << "🤫 secret: " << std::endl;
-	std::getline(std::cin, darkestSecret);
+	if(!std::getline(std::cin, darkestSecret))
+		exit(1);
 }
 
 void	Contact::display(){
-	std::cout << firstName << std::endl;
 	std::cout << firstName << std::endl;
 	std::cout << lastName << std::endl;
 	std::cout << nickname << std::endl;

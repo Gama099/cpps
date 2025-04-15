@@ -3,6 +3,9 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
+#include <iomanip>
+#include <sstream>
+#include <cstdlib>
 
 // using namespace std;
 
@@ -28,7 +31,21 @@
 
 using namespace std;
 
+
+void add(int &r)
+{
+	r += 1;
+}
+
+class hi{
+	public:
+		void f(void){
+		}
+};
+
 int main(){
+	hi obj;
+	void (hi::*ptr)(void) = &hi::f;
 	// std::pair <int, int> myPair(42, 15);
 	// std::cout << myPair.first <<std::endl;
 	// std::cout << myPair.second << std::endl;
@@ -102,9 +119,23 @@ int main(){
 	// 	cout << tur << "|";
 	// }
 
-	int a = 10;
-	stringstream ss;
-	ss << a;
-	string str = ss.str();
-	cout << str;
+	// int a = 10;
+	// stringstream ss;
+	// ss << a;
+	// cout << ss.str() << endl;
+	// ss.str("");
+	// // ss.clear();
+	// ss << 16;
+	// cout << ss.str() << endl;
+	// ss.str("");
+	// // ss.clear();
+	// ss << 50;
+	// cout << ss.str() << endl;
+	// string name ;
+	// if (!std::getline(std::cin, name))
+	// 	cout << "hi";
+	// cout << name;
+
+	// cout << sizeof(std::setw(10)) ;
+
 }

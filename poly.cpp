@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 
 class p{
 	public:
@@ -22,12 +23,12 @@ class c2 : virtual public p{
 };
 
 int main(){
-	c1 c1;
-	c2 c2;
+	std::stringstream ss;
+	int x;
 
-	p* p1 = &c1;
-	p* p2 = &c2;
-	p1->ping();
-	p2->ping();
+	ss << 5;
+	std::cout << ss.str();
+	ss.str("");
+	std::cout << ss.str();
 
 }

@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-hadd <sel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 18:18:18 by sel-hadd          #+#    #+#             */
+/*   Updated: 2025/04/15 18:18:18 by sel-hadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "PhoneBook.hpp"
 
 // void	set_phone_book( std::string cmd );
@@ -20,12 +33,11 @@ int	main()
 	int 		index = 0;
 	welcome_to_phonebook();
 	while (1){
-		std::cout << "****************************************" << std::endl;
-		std::cout << "*     Please choose an option:         *" << std::endl;
-		std::cout << "*          ADD                         *" << std::endl;
-		std::cout << "*          SEARCH                      *" << std::endl;
-		std::cout << "*          EXIT                        *" << std::endl;
-		std::cout << "****************************************" << std::endl;
+		std::cout << "Please choose an option:" << std::endl;
+		std::cout << "          ADD" << std::endl;
+		std::cout << "          SEARCH" << std::endl;
+		std::cout << "          EXIT" << std::endl;
+
 		std::cout << std::endl;
 
 		if(!std::getline(std::cin, cmd))
