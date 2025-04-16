@@ -12,7 +12,7 @@
 
 #include <iostream>
 #include <string>
-#include <cctype>
+// #include <cctype>
 
 int main(int ac, char **av){
     if (ac == 1)

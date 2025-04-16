@@ -23,12 +23,6 @@ class c2 : virtual public p{
 };
 
 int main(){
-	std::stringstream ss;
-	int x;
-
-	ss << 5;
-	std::cout << ss.str();
-	ss.str("");
-	std::cout << ss.str();
-
+	std::string line("hello");
+	std::cout << line;
 }

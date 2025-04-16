@@ -45,6 +45,15 @@ class Contact
 		std::string	getPhoneNumber();
 		std::string	getDarkestSecret();
 
+		//Setters
+		void setFirstName();
+		void setLastName();
+		void setNickname();
+		void setPhoneNumber();
+		void setDarkestSecret();
+
+
+		
 };
 
 #endif

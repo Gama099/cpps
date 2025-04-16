@@ -17,7 +17,7 @@
 #define CONTACT_NUM 8
 
 #include <cstdlib>
-#include <cctype>   // For isdigit
+#include <cctype>   
 #include "Contact.hpp"
 
 class PhoneBook
