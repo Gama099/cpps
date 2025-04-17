@@ -1,14 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-hadd <sel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 22:23:23 by sel-hadd          #+#    #+#             */
+/*   Updated: 2025/04/17 22:23:26 by sel-hadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 #include <iostream>
 
 int main() {
-    // Create a zombie on the heap
-    Zombie* heapZombie = newZombie("HeapZombie");
+    Zombie* heapZombie = newZombie("Heap Zombie");
+
     heapZombie->announce();
-    delete heapZombie; // Don't forget to free memory!
-
-    // Create a zombie on the stack
-    randomChump("StackZombie");
-
+    delete heapZombie;
+    randomChump("Stack Zombie");
     return 0;
 }
