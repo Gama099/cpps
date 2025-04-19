@@ -1,20 +1,21 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-#include <iostream>
 
+#include <iostream>
+#include <string>
 class Fixed
 {
 private:
-	int 				fixedPoint;
-	static const int 	fractionalBits = 8;
+	int fixedPointValue;
+	static const int  fractionalBits = 8;
 public:
 	Fixed();
-	Fixed(const Fixed &other);
-	Fixed &operator=(const Fixed &other);
+	Fixed(const Fixed &obj);
+	Fixed& operator=(const Fixed &obj);
 	~Fixed();
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	int getRawBits( void ) const;
+	void setRawBits( int const raw );
 };
 
 #endif

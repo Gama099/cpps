@@ -60,16 +60,33 @@ using namespace std;
 
 class a{
 	public:
-	 void f(){
-        cout << "defualt YYY" << endl;
+	int x;
+	 void f(int n){
+        x = n ;
+	 }
+	 a() : x(0){}
+	 a(int b) : x(b){}
+	 a(const a &obj){
+		x = obj.x;
 	 }
 };
 
 int main()
 {
 	a obj;
+	a nm(99);
 
-	void (a::*ptr)() = &a::f;
-	(*ptr)();
+	// cout << obj.x <<endl;
+	// void (a::*ptr)(int) = &a::f;
+	// (obj.*ptr)(150);
+	// cout << obj.x <<endl;
+	// a nobj(obj);
+	// cout << nobj.x <<endl;
+	// nobj = nm;
+	// cout << nobj.x <<endl;
+	std::string line("hello");
+	
+
+
 
 }
