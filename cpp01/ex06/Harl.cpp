@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-hadd <sel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 23:44:47 by sel-hadd          #+#    #+#             */
-/*   Updated: 2025/04/17 23:47:20 by sel-hadd         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:17:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,36 @@ void Harl::error(){
 void Harl::complain(std::string level)
 {
 	// create array of points to function members and assign them
-	void (Harl::*pointer[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	void (Harl::*pointer[])() = {&Harl::debug, 
+	&Harl::info, 
+	&Harl::warning, 
+	&Harl::error
+	};
+	
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	for(int i = 0; i < 4; i++){
-		if (level == levels[i]){
-			for (int j = i; j < 4; j++){
-				(this->*pointer[j])();
-			}
-			return ;
-		}
+	
+	int levelIndex = -1;
+    for (int i = 0; i < 4; i++) {
+        if (level == levels[i]) {
+            levelIndex = i;
+            break;
+        }
+    }
+
+	switch (levelIndex) {
+		case 0: // DEBUG
+			(this->*pointer[0])();
+			// Fall through
+		case 1: // INFO
+			(this->*pointer[1])();
+			// Fall through
+		case 2: // WARNING
+			(this->*pointer[2])();
+			// Fall through
+		case 3: // ERROR
+			(this->*pointer[3])();
+			break;
+		default:
+			std::cout << "Harl has not comment" << std::endl;
 	}
-	std::cout << "nothing" << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-hadd <sel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 23:44:12 by sel-hadd          #+#    #+#             */
-/*   Updated: 2025/04/17 23:44:14 by sel-hadd         ###   ########.fr       */
+/*   Updated: 2025/04/21 18:16:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,20 @@ void Harl::error(){
 void Harl::complain(std::string level)
 {
 	// create array of points to function members and assign them
-	void (Harl::*pointer[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	void (Harl::*pointer[])() = {
+		&Harl::debug, 
+		&Harl::info, 
+		&Harl::warning, 
+		&Harl::error
+	};
+	
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	for(int i = 0; i < 4; i++){
-		if (level == levels[i])
-		{
-			(this->*pointer[i])(); return ;
+		if (level == levels[i]){
+			(this->*pointer[i])();
+			return ;
 		}
 	}
-	std::cout << "harl has not comment" << std::endl;
+	std::cout << "Harl has not comment" << std::endl;
 }
 

@@ -23,9 +23,6 @@ public:
 	int toInt( void ) const;
 };
 
-std::ostream& operator<<(std::ostream& out, Fixed &obj)
-{
-	
-}
+std::ostream& operator<<(std::ostream& out, const Fixed &obj);
 
 #endif

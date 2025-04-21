@@ -3,24 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-hadd <sel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 23:44:27 by sel-hadd          #+#    #+#             */
-/*   Updated: 2025/04/17 23:44:29 by sel-hadd         ###   ########.fr       */
+/*   Updated: 2025/04/21 20:35:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 #include <iostream>
 
-int main() {
+int main(int ac, char **av){
+    if (ac != 2){
+        std::cout << "Usage: " << av[0] << " <level>" << std::endl;
+        return 1;
+    }
     Harl harl;
-
-    harl.complain("DEBUG");
-    harl.complain("INFO");
-    harl.complain("WARNING");
-    harl.complain("ERROR");
-    harl.complain("UNKNOWN");
-
-    return 0;
+    harl.complain(av[1]);
+    return (0);
 }
