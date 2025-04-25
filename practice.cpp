@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <cmath>
 
 using namespace std;
 
@@ -58,23 +60,89 @@ using namespace std;
 //     x.dis();
 // }
 
-class a{
+// class a{
+// 	public:
+// 	int x;
+// 	 void f(int n){
+//         x = n ;
+// 	 }
+// 	 a() : x(0){}
+// 	 a(int b) : x(b){}
+// 	 a(const a &obj){
+// 		x = obj.x;
+// 	 }
+// };
+
+string tobi(int nub){
+	std::string bit = "00000000000000000000000000000000";
+	int one = 1;
+	for(int i = 0; i < bit.length() ; i++){
+		one = (one << 1);
+		cout << one << endl;
+	}
+	return bit;
+}
+
+class Myclass{
 	public:
 	int x;
-	 void f(int n){
-        x = n ;
-	 }
-	 a() : x(0){}
-	 a(int b) : x(b){}
-	 a(const a &obj){
-		x = obj.x;
-	 }
+	Myclass(int y) : x(y) {}
+	Myclass& operator=(const Myclass & other){
+		this->x = other.x;
+		return *this;
+	}
+	Myclass(const Myclass &other){
+		*this = other;
+	}
+
+	Myclass operator+(Myclass const & other){
+		Myclass result(15);
+		result.x = this->x + other.x;
+		return result;
+	}
+};
+
+std::ostream& operator<<(std::ostream &out, const Myclass &other){
+	return out << other.x;
+}
+
+int to_fix(int nbr){
+	int value;
+
+	value = nbr;
+	return (value << 8);
+}
+
+int to_fixx(float nbr){
+	int value;
+
+	value = roundf(nbr * 256);
+	// cout  << "vale " << value << endl;
+	return (value << 8);
+}
+
+class animal{
+	private:
+		string soul;
+	public:
+		void eat(){
+			cout << "animal eating .." << endl;
+		}
+};
+
+class cat : public animal{
+	public:
+	void eat(){
+		cout << "cat eating .." << endl;
+	}
 };
 
 int main()
 {
-	a obj;
-	a nm(99);
+	cat m;
+	m.eat();
+	// a obj;
+	// a nm(99);
 
 	// cout << obj.x <<endl;
 	// void (a::*ptr)(int) = &a::f;
@@ -84,9 +152,24 @@ int main()
 	// cout << nobj.x <<endl;
 	// nobj = nm;
 	// cout << nobj.x <<endl;
-	std::string line("hello");
-	
+	// std::string line("hello");
+	// int x = to_fixx(5.25);
+	// cout << x << endl;
+	// cout << (x / 256) << endl;
 
-
+	// Myclass a(1000;
+	// Myclass b(99);
+	// cout << a << endl;
+	// cout <<b << endl;
+	// b = a;
+	// Myclass y(b);
+	// cout << b << endl;
+	// cout <<b << endl;
+	// Myclass x = a + b;
+	// int y = -15;
+	// y = y << 8;
+	// cout << "y = " << y;
+	// cout << x;
+	// tobi(15);
 
 }

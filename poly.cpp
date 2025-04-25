@@ -22,21 +22,18 @@
 // 		}
 // };
 
+using namespace std;
+class animal{
+	public:
+		void eat(){
+			cout << "eating" << endl;
+		}
+};
+
+class dog : public animal{
+};
+
 int main(){
-	int x = 5;
-	switch(x)
-	{
-		case 1:
-			std::cout << "1";
-		case 2:
-			std::cout << "2";
-			break;
-		case 5:
-			std::cout << "5";
-			break;
-		default:
-			std::cout << "non";
-			break;
-		break;
-	}
+	dog dog;
+	dog.eat();
 }

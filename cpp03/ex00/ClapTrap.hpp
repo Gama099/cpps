@@ -8,11 +8,13 @@ class ClapTrap
 private:
     std::string name;
     int HitPoints; //  represent the health of the ClapTrap
-    int EnergyPoints; 
+    int EnergyPoints;
     int AttackDamage;
 
 public:
     ClapTrap(std::string name);
+	ClapTrap(const ClapTrap &other);
+	ClapTrap& operator=(const ClapTrap &other);
     ~ClapTrap();
 
     void attack(const std::string& target);
